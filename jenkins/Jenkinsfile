@@ -1,11 +1,5 @@
 pipeline {
     agent any
-    parameters {
-        
-        string(name: 'NODE_IP', defaultValue: '127.0.0.1', description: 'Node IP where this job will be deplyoing app to')
-        
-        
-    }
     tools {
         maven "maven"
     }
