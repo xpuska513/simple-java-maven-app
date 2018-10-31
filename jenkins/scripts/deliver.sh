@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-whoami
-whoami
-whoami
+
 echo 'The following Maven command installs your Maven-built Java application'
 echo 'into the local Maven repository, which will ultimately be stored in'
 echo 'Jenkins''s local Maven repository (and the "maven-repository" Docker data'
@@ -28,4 +26,4 @@ echo 'The following command runs and outputs the execution of your Java'
 echo 'application (which Jenkins built using Maven) to the Jenkins UI.'
 set -x
 
-ssh ubuntu@18.222.201.46 "java -jar ${NAME}-${VERSION}.jar"
+ssh ubuntu@$1 "java -jar ${NAME}-${VERSION}.jar"
