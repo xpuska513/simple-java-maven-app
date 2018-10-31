@@ -21,9 +21,9 @@ set -x
 VERSION=`mvn help:evaluate -Dexpression=project.version | grep "^[^\[]"`
 set +x
 
-scp target/${NAME}-${VERSION}.jar ubuntu@${1}:/home/ec2-user/
+scp target/${NAME}-${VERSION}.jar ec2-user@${1}:/home/ec2-user/
 echo 'The following command runs and outputs the execution of your Java'
 echo 'application (which Jenkins built using Maven) to the Jenkins UI.'
 set -x
 
-ssh ubuntu@$1 "java -jar ${NAME}-${VERSION}.jar"
+ssh ec2-user@$1 "java -jar ${NAME}-${VERSION}.jar"
